@@ -23,12 +23,55 @@
     <div id= "addNew" data-bs-toggle="modal" data-bs-target="#form">
         <span>Add New Task</span>
         <i class = "fas fa-plus"></i>
-        <h5>Tasks</h5>
+        <h5 class="text-center my-3">Tasks</h5>
+
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" >
+            Launch demo modal
+        </button>
+  
+        <!-- Modal -->
+         <form class="modal fade" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Task</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p>Task Title</p>
+          <input class="form-control" type="text" name="" id="textInput">
+           <br>
+            <p>Due Date</p>
+          <input class="form-control" type="date" name="" id="dateInput">
+            <br>
+            <p>Description</p>
+          <textarea class="form-control" name="" id="textArea" cols="30" rows="5"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+        </form>
+
+
 
         <div id="tasks">
             <div>
-                <span>Task1</span>
-                <span>2022-1-20</span>
+                <span class="fw-bold">Task1</span>
+                <span class="small text-secondary">2022-1-20</span>
+                <p>going to gym to watch netflix</p>
+
+                <span class="options"></span>
+                <i class="fas fa-edit"></i>
+                <i class="fas fa-trash-alt"></i>
+            </div>
+            <div>
+                <span class="fw-bold">Task2</span>
+                <span class="small text-secondary">2022-1-20</span>
                 <p>going to gym to watch netflix</p>
 
                 <span class="options"></span>
@@ -42,5 +85,8 @@
 
 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" 
+integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" 
+crossorigin="anonymous"></script>
 <script src="main.js"></script>
 </html>
