@@ -42,6 +42,7 @@
         <div class="modal-body">
             <p>Task Title</p>
           <input class="form-control" type="text" name="" id="textInput">
+          <div id="msg"></div>
            <br>
             <p>Due Date</p>
           <input class="form-control" type="date" name="" id="dateInput">
@@ -51,7 +52,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Add</button>
+          <button type="submit" id="add" class="btn btn-primary">Add</button>
         </div>
       </div>
     </div>
@@ -66,8 +67,8 @@
                 <p>going to gym to watch netflix</p>
 
                 <span class="options"></span>
-                <i class="fas fa-edit"></i>
-                <i class="fas fa-trash-alt"></i>
+                <i onClick = "editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
+                <i onClick = "deleteTask(this)" class="fas fa-trash-alt"></i>
             </div>
             <div>
                 <span class="fw-bold">Task2</span>
@@ -75,8 +76,8 @@
                 <p>going to gym to watch netflix</p>
 
                 <span class="options"></span>
-                <i class="fas fa-edit"></i>
-                <i class="fas fa-trash-alt"></i>
+                <i onClick = "editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
+                <i onClick = "deleteTask(this)" class="fas fa-trash-alt"></i>
             </div>
         </div>
     </div>
