@@ -28,13 +28,18 @@ let formValidation = () =>{
     }
 };
 
-let data = {}
+let data = [];
 
 let acceptData = () => {
-    data["text"] = textInput.value;
-    data["date"] = dateInput.value;
-    data["description"] = textArea.value;
+    data.push({
+    text: textInput.value,
+    date: dateInput.value,
+    description: textArea.value,
+    });
 
+    localStorage.setItem("data",JSON.stringif(data));
+    
+    console.log(data);
     createTasks();
 };
 
@@ -65,6 +70,8 @@ let editTask = (e) => {
    textInput.value = selectedTask.children[o].innerHTML;
    dateInput.value = selectedTask.children[1].innerHTML;
    textArea.value = selectedTask.children[2].innerHTML;
+
+   selectedTask.remove();
 };
 
 let resetForm = () =>{
@@ -73,3 +80,6 @@ let resetForm = () =>{
     textArea.value = "";
 };
 
+(()=>{
+    data = localStorage.getItem("data");
+})()
