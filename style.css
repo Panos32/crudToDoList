@@ -54,13 +54,13 @@ body{
     gap: 4px;
 }
 
-.options {
+#tasks div .options {
     justify-self: center;
     display: flex;
     gap: 20px;
 }
 
-.options i {
+#tasks div .options i {
     cursor: pointer;
 }
 
