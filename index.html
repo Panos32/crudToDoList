@@ -20,22 +20,20 @@
 <div class="app">
     <h4 class="mb-3"> ToDo App</h4>
     
-    <div id= "addNew" data-bs-toggle="modal" data-bs-target="#form">
+    <div id="addNew" data-bs-toggle="modal" data-bs-target="#form">
         <span>Add New Task</span>
         <i class = "fas fa-plus"></i>
-        <h5 class="text-center my-3">Tasks</h5>
     </div>  
 
         <!-- Modal -->
          <form class="modal fade" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                <div class="modal-content">
-                <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Task</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Task</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <input type="text" name="" id="">
             <p>Task Title</p>
           <input class="form-control" type="text" name="" id="textInput">
           <div id="msg"></div>
@@ -54,28 +52,10 @@
     </div>
         </form>
 
-
+        <h5 class="text-center my-3">Tasks</h5>
 
         <div id="tasks">
-            <div>
-                <span class="fw-bold">Task1</span>
-                <span class="small text-secondary">2022-1-20</span>
-                <p>going to gym to watch netflix</p>
-
-                <span class="options">
-                <i onClick = "editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
-                <i onClick = "deleteTask(this)" class="fas fa-trash-alt"></i>
-                </span>
-            </div>
-            <div>
-                <span class="fw-bold">Task2</span>
-                <span class="small text-secondary">2022-1-20</span>
-                <p>going to gym to watch netflix</p>
-
-                <span class="options">
-                <i onClick = "editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
-                <i onClick = "deleteTask(this)" class="fas fa-trash-alt"></i>
-                </span>
+            
             </div>
         </div>
     </div>

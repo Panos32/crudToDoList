@@ -17,14 +17,14 @@ let formValidation = () =>{
        msg.innerHTML = "Task cannot be blank" 
     } else {
         console.log("success");
-        msg.innerHTML = "" ;
+        msg.innerHTML = "";
         acceptData();
         add.setAttribute("data-bs-dismiss","modal");
         add.click();
 
         (()=>{
             add.setAttribute("data-bs-dismiss","");
-        })()
+        })();
     }
 };
 
@@ -37,24 +37,27 @@ let acceptData = () => {
     description: textArea.value,
     });
 
-    localStorage.setItem("data",JSON.stringif(data));
+    localStorage.setItem("data",JSON.stringify(data));
     
     console.log(data);
     createTasks();
 };
 
 let createTasks = () => {
-    tasks.innerHTML += `
-    <div>
-        <span class="fw-bold">${data.text}</span>
-        <span class="small text-secondary">${data.date}</span>
-        <p>${data.description}</p>
-
-        <span class="options">
-        <i onClick = "editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
-        <i onClick = "deleteTask(this)" class="fas fa-trash-alt"></i>
-        </span>
-    </div> `;
+    tasks.innerHTML= "";
+    data.map((x,y)=>{
+        return (tasks.innerHTML += `
+        <div id=${y}>
+            <span class="fw-bold">${x.text}</span>
+            <span class="small text-secondary">${x.date}</span>
+            <p>${x.description}</p>
+    
+            <span class="options">
+            <i onClick = "editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
+            <i onClick = "deleteTask(this)" class="fas fa-trash-alt"></i>
+            </span>
+        </div> `);
+    })
 
     resetForm();
 };
@@ -62,6 +65,9 @@ let createTasks = () => {
 
 let deleteTask = (e) =>{
     e.parentElement.parentElement.remove();
+    data.splice(e.parentElement.parentElement.id,1);
+    localStorage.setItem("data",JSON.stringify(data));
+    console.log();
 };
 
 let editTask = (e) => {
@@ -71,7 +77,7 @@ let editTask = (e) => {
    dateInput.value = selectedTask.children[1].innerHTML;
    textArea.value = selectedTask.children[2].innerHTML;
 
-   selectedTask.remove();
+   deleteTask(e);
 };
 
 let resetForm = () =>{
@@ -81,5 +87,8 @@ let resetForm = () =>{
 };
 
 (()=>{
-    data = localStorage.getItem("data");
+    data = JSON.parse(localStorage.getItem("data"));
+    createTasks();
+    console.log(data);
+
 })()
